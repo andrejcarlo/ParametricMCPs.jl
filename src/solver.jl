@@ -47,7 +47,7 @@ function solve(
     end
 
     if warn_on_convergence_failure && status != PATHSolver.MCP_Solved
-        @warn "MCP not converged: PATH solver status is $(status)."
+        error("MCP not converged: PATH solver status is $(status).")
     end
 
     (; z, status, info)
